@@ -1,16 +1,21 @@
 import styles from "./Home.module.css";
-import help from "../../img/help.png";
-import LinkButton from "../layout/LinkButton";
+import Filtros from "../form/Filtros";
+
 
 function Home (){
+    const filtrosProps = {
+        textspan: "Selecione uma opção:",
+        idselect: "filtroOpcoes",
+        nameselect: "opcoes",
+        nameoptions: [
+            { valor: 'opcao1', nome: 'Opção 1' },
+            { valor: 'opcao2', nome: 'Opção 2' },
+            { valor: 'opcao3', nome: 'Opção 3' },
+        ],
+    };
     return (
         <section className={styles.home}>
-            <h1>
-                Bem vindo ao <span>Site de Ajuda</span>
-            </h1>
-            <p>Este site é um exemplo para React!!</p>
-            <LinkButton to="/NovaPagina" text="Nova Página" />
-            <img src={help} alt="Help" />
+            <Filtros {...filtrosProps} />
         </section>
     );
 }
